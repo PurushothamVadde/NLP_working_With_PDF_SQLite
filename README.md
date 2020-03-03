@@ -15,9 +15,12 @@ The main.py accept the url as input argument, the project0.py is imported into m
 The project file contains the below functions
 
 - fetchincidents(url)
+
 This function takes argument as url and using urllib we will read the data from url and the data read is in the form of bytes. The bytes data is stored into the temp_file which is created using the tempfile package, and the function returns the address of the temp_file.
+
 - extractincidents(temp_file)
-The address of the temp_file is passed as argument to the extractincidents(temp_file), by using the PdfFileReader method in PyPDF2 package the bytes data is read and stored in pdfReader, from the pdfReader the data is extracted  and stored in the page using extractText(). The extracted data has five columns values of a incidents table. The extracted data is in form of string and each word is separated with ‘ \n’ and the replaced the ‘ \n’ with blank and stored in pagedata. After replacing the blank the pagedata is splitted into list by using 
+
+The address of the temp_file is passed as argument to the **extractincidents(temp_file)**, by using the PdfFileReader method in PyPDF2 package the bytes data is read and stored in pdfReader, from the pdfReader the data is extracted  and stored in the page using **extractText()**. The extracted data has five columns values of a incidents table. The extracted data is in form of string and each word is separated with ‘ \n’ and the replaced the ‘ \n’ with blank and stored in pagedata. After replacing the blank the pagedata is splitted into list by using 
 > re.split(r"\s+(?=\d+/\d+/\d+\s)", pagedata)
 
 After splitting the list with date we got each list contains the 5 column values separated by \n.
@@ -35,10 +38,10 @@ The incident column has some missing values to handle that we checked the length
 - length of list is greater than 5:
 We have few lists where the length of the list has greater than the 5 so we add two conditions if the length is >5 we are removing last value and if length is >6 we are removing two values in the list.
 
-> if (len(pagedata)>6):
-            pagedata.pop()
-            pagedata.pop()
-  if (len(pagedata)>5):
+> if (len(pagedata)>6): \
+            pagedata.pop() \
+            pagedata.pop() \
+  if (len(pagedata)>5): \
             pagedata.pop()
 After handling the issues, the lists are appended and formed a list with sub lists where each sub list has 5 values of 5 columns from the pdf, we read using URL and the function extractincidents returns the list.
 - createdb()
