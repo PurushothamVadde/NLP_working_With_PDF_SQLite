@@ -1,4 +1,5 @@
-import project0
+from project0 import project0
+
 import sqlite3
 
 url = "http://normanpd.normanok.gov/filebrowser_download/657/2020-02-27%20Daily%20Incident%20Summary.pdf"
