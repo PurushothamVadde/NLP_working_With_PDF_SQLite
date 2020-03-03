@@ -114,6 +114,10 @@ In this method we test the **status()** by executing all the methods the status 
          assert len(i) > 0
 
 
+## 4.Assumptions/Bugs:
+
+- In this project we assumed that the only incidents are missing in the pdf document and we handled only the missing values in incidents column if any other values are missed in the pdf the code may fail. 
+- the another assumption is we observed that the after splitting the data by date the maximum length of the text we observed id 7 and we handled that if the length of list is >7 then the code may fail in this case.
 
 
 
