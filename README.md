@@ -25,7 +25,7 @@ The address of the temp_file is passed as argument to the **extractincidents(tem
 
 After splitting the list with date we got each list contains the 5 column values separated by \n.
 
-- Handling the missing values in the list:
+- **Handling the missing values in the list:**
 
 After splitting the data using date regular expression, we have two issue in the list
 - **Missing values in incident:**
@@ -42,7 +42,7 @@ We have few lists where the length of the list has greater than the 5 so we add 
             pagedata.pop() \
             pagedata.pop() \
   if (len(pagedata)>5): \
-            pagedata.pop() \
+            pagedata.pop() 
             
 After handling the issues, the lists are appended and formed a list with sub lists where each sub list has 5 values of 5 columns from the pdf, we read using URL and the function extractincidents returns the list.
 
@@ -70,5 +70,51 @@ In this function we connect to the norman.db again by taking the input argument 
 > db.execute("""SELECT nature ||'|'|| count(*) FROM incidents GROUP BY nature """)
 
 The | is used to separate the incident type and count of incident.
+
+
+## 3.test_project0.py
+
+The test_project0.py file contains the unit testcases to test each method is working are not which we designed in the project0.py file, in this file we written the below 5 testcases to test each method. we import the project0 file to test access the functions in project.py.
+
+### **test_fetchincidents():**
+In this test case we test the fetchincidents method by passing the  URL  to **fetchincidents( )** method and we use the arrest statement test the is returning some value are not, if it returns some value the test case will pass.
+
+      > assert project0.fetchincidents(url) is not None
+
+### **test_extractincidents():**
+
+In this test case we test the extactincidents, the function returns the list where each list has length of 5, we test the function by iterating through each list and check length is >1 or not.
+
+      > temp_file = project0.fetchincidents(url)
+      result = project0.extractincidents(temp_file)
+      for i in result:
+            assert len(i) > 1
+
+### **test_createdb():**
+
+In this testcase we would test the **createdb()**, the createdb method would return the db name if it executed successfully, the assert statement checks the return name is norman.db or not.
+  
+     > assert project0.createdb() == 'norman.db'
+
+### **test_populatedb( ):**
+
+In this method we test the **populated()** method, to test the method we get the incidents list form extractincidents, dbname  from createdb and pass as the input arguments to the populate db, after  running the populated method we connect to db using sqlite3 and fetch the values and we will check the length of each row should be equal to 5, if the length of each row is equal to 5 then the test case will pass else the test case will  fail. 
+
+      > db.execute('select * from incidents;' )
+      result = db.fetchall()
+      for i in result:
+         assert len(i) == 5
+
+## **test_status( ):**
+
+In this method we test the **status()** by executing all the methods the status () method will return the string of incidents and number of incidents to test this we will iterate to each string and check the length of the string is >0. If the function is not returning the any values the testcase will fail.
+
+     > result = db.fetchall()
+       for i in result:
+         assert len(i) > 0
+
+
+
+
 
 
