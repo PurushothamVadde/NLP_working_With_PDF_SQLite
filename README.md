@@ -124,7 +124,7 @@ if the length of list is > 7 then the code may fail in this case.
 
 - **Step1** \
 clone the project directory using below command 
-> git clone 
+> git clone  https://github.com/PurushothamVadde/cs5293sp20-project0.git
 
 - **Step2** \
 Navigate to directory that we cloned from git **cs5293sp20-project0** and run the below command by providing URL
