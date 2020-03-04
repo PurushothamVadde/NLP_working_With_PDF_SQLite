@@ -1,0 +1,23 @@
+## Folder Structure:
+
+.
+├── COLLABORATORS
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── norman.db
+├── project0
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   └── project0.cpython-38.pyc
+│   ├── main.py
+│   └── project0.py
+├── setup.cfg
+├── setup.py
+└── test
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-38.pyc
+    │   └── test_project0.cpython-38-pytest-5.3.5.pyc
+    └── test_project0.py
