@@ -120,6 +120,20 @@ In this method we test the **status()** by executing all the methods the status 
 - The another assumption is, we observed that after splitting the data by date the maximum length of the list we observed is 7.
 if the length of list is > 7 then the code may fail in this case.
 
+## Steps to Run project0
 
+- **Step1** \
+clone the project directory using below command 
+> git clone 
 
+- **Step2** \
+Navigate to directory that we cloned from git **cs5293sp20-project0** and run the below command by providing URL
+
+> pipenv run python project0/main.py --incidents **URL**
+
+- **Step3** 
+
+From **cs5293sp20-project0** run the below command to test the testcases. 
+
+> pytest -v
 
