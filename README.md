@@ -1,5 +1,16 @@
 ## Text Analytics project 0  "Norman Database for incidents"
 
+## Author: Purushotham Vadde
+
+## Packages Required for Project:
+
+- urllib.request
+- PyPDF2
+- tempfile
+- re
+- sqlite3
+
+
 In this project we downloaded the INCIDENTS pdf data from normanpd website and stored the pdf data into database and performed the text search operations. \
 The projects have below files: 
 ## 1.main.py 
