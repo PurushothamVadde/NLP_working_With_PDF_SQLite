@@ -1,4 +1,4 @@
-## Text Analytics project 0  "Norman Database for incidents"
+## NLP_working_With_PDF_SQLite
 
 ## Author: Purushotham Vadde
 
@@ -135,16 +135,16 @@ if the length of list is > 7 then the code may fail in this case.
 
 - **Step1** \
 clone the project directory using below command 
-> git clone  https://github.com/PurushothamVadde/cs5293sp20-project0.git
+> git clone  https://github.com/PurushothamVadde/NLP_working_With_PDF_SQLite.git
 
 - **Step2** \
-Navigate to directory that we cloned from git **cs5293sp20-project0** and run the below command by providing URL
+Navigate to directory that we cloned from git **NLP_working_With_PDF_SQLite** and run the below command by providing URL
 
 > pipenv run python project0/main.py --incidents **URL**
 
 - **Step3** 
 
-From **cs5293sp20-project0** run the below command to test the testcases. 
+From **NLP_working_With_PDF_SQLite** run the below command to test the testcases. 
 
 > pytest -v
 
